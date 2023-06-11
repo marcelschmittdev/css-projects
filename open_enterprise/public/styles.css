@@ -1,0 +1,505 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1.8em;
+  color: #303031;
+}
+
+h1, h2 {
+  font-family: "Fredericka the Great", cursive;
+}
+
+h1 {
+  font-size: 4.8rem;
+}
+
+h2 {
+  font-size: 3.2rem;
+}
+
+p {
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 2em;
+  }
+  h1 {
+    font-size: 6.4rem;
+  }
+  h2 {
+    font-size: 4.8rem;
+  }
+}
+body {
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f9f9f9;
+  padding: 30px 0;
+  overflow-x: hidden;
+}
+
+section, header, footer {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.desktop-navbar {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+.desktop-navbar nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.desktop-navbar nav ul li {
+  display: inline-block;
+  margin: 0 1.6rem;
+}
+.desktop-navbar nav ul li:last-of-type a, .desktop-navbar nav ul li:hover a {
+  color: #71A894;
+}
+.desktop-navbar nav ul li a {
+  font-size: 2rem;
+  transition: color 0.3s;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  width: 250px;
+}
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.menu {
+  cursor: pointer;
+}
+.menu .line {
+  height: 0.2rem;
+  width: 2.5rem;
+  background-color: #303031;
+}
+.menu .line-1, .menu .line-2 {
+  margin-bottom: 0.6rem;
+}
+
+.dropdown-nav {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  margin-top: 1em;
+}
+.dropdown-nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1em;
+}
+.dropdown-nav a:hover,
+.dropdown-nav li:last-of-type a {
+  color: #71A894;
+}
+.dropdown-nav.open {
+  max-height: 15em;
+}
+
+@media (min-width: 992px) {
+  .desktop-navbar {
+    display: flex;
+  }
+  .desktop-navbar nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .desktop-navbar nav ul li {
+    display: inline-block;
+    margin: 0 1rem;
+  }
+  .desktop-navbar nav ul li:last-of-type a, .desktop-navbar nav ul li:hover a {
+    color: #71A894;
+  }
+  .desktop-navbar nav ul li a {
+    font-size: 1.6rem;
+    transition: color 0.3s;
+  }
+  .mobile-navbar {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .desktop-navbar nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .desktop-navbar nav ul li {
+    display: inline-block;
+    margin: 0 1.6rem;
+  }
+  .desktop-navbar nav ul li:last-of-type a, .desktop-navbar nav ul li:hover a {
+    color: #71A894;
+  }
+  .desktop-navbar nav ul li a {
+    font-size: 2rem;
+    transition: color 0.3s;
+  }
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 4em;
+}
+footer .footer-company {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin: 0;
+}
+footer .footer-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+footer .footer-nav ul li {
+  display: block;
+  margin: 1em 0;
+}
+
+@media (min-width: 992px) {
+  footer {
+    flex-direction: row;
+    align-items: center;
+  }
+  footer .footer-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  footer .footer-nav ul li {
+    display: inline-block;
+    margin: 0 1.6rem;
+  }
+  footer .footer-nav ul li:last-of-type a, footer .footer-nav ul li:hover a {
+    color: #71A894;
+  }
+  footer .footer-nav ul li a {
+    font-size: 2rem;
+    transition: color 0.3s;
+  }
+}
+.primary-btn {
+  background-color: #71A894;
+  color: #fff;
+  border: 0;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.primary-btn:focus {
+  outline: none;
+}
+.primary-btn:active {
+  transform: scale(0.98);
+}
+
+.dark-btn {
+  background-color: #303031;
+  color: #fff;
+  border: 0;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.dark-btn:focus {
+  outline: none;
+}
+.dark-btn:active {
+  transform: scale(0.98);
+}
+
+.card {
+  padding: 3em 1em;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+.card .card-heading {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.task {
+  background-color: #fff;
+  padding: 8px 16px 16px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+}
+.task .task-heading {
+  font-weight: 600;
+}
+.task .task-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+.task .task-bounty, .task .task-deadline {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.task .task-bounty {
+  background-color: #71A894;
+  color: #fff;
+  padding: 0.2em 0.4em;
+  border-radius: 40px;
+  margin: 0.4em 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8em;
+}
+
+.hero {
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.hero-content h1 {
+  margin: 0;
+}
+
+.hero-img {
+  max-width: 40em;
+}
+.hero-img img {
+  max-width: 100%;
+}
+
+.reimagine-work-section {
+  text-align: center;
+}
+.reimagine-work-section p, .reimagine-work-section h2 {
+  max-width: 1000px;
+  margin: 1em auto;
+}
+
+.reimagine-work-section .cards-wrapper {
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+.cards-wrapper .card {
+  max-width: 100%;
+}
+
+.benefits-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+
+.benefit-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.benefit-wrapper .benefit-widget {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.benefit-wrapper .benefit-widget img {
+  max-width: 100%;
+}
+.benefit-wrapper .benefit-copy {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.benefit-wrapper .benefit-copy-heading {
+  margin: 0.5em 0;
+}
+.benefit-wrapper .benefit-copy-text {
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+}
+
+.benefit-wrapper:first-of-type .benefit-widget img {
+  border-radius: 16px;
+  box-shadow: 20px 20px #71A894;
+}
+
+.career-section > h2, .career-section > p {
+  text-align: center;
+}
+.career-section .btn-wrapper {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+}
+.career-section .tasks-wrapper {
+  margin-top: 2.3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.7em;
+}
+.career-section .task {
+  max-width: 100%;
+}
+
+.divider {
+  width: 150vw;
+  height: auto;
+}
+
+.cta-section {
+  display: flex;
+  flex-direction: column;
+}
+.cta-section .cta-text-wrapper, .cta-section .cta-img-wrapper {
+  flex: 1;
+}
+.cta-section .cta-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.cta-section .cta-text-wrapper .cta-link {
+  display: inline-block;
+  margin-top: 16px;
+}
+.cta-section .cta-img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+}
+.cta-section .cta-img-wrapper img {
+  max-width: 100%;
+}
+
+.creators {
+  margin-top: 4em;
+}
+.creators a {
+  color: #71A894;
+}
+
+@media (min-width: 768px) {
+  .reimagine-work-section .cards-wrapper {
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+  .reimagine-work-section .cards-wrapper .card {
+    max-width: 14em;
+  }
+  .benefits-section {
+    gap: 6em;
+  }
+  .career-section .tasks-wrapper {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .career-section .tasks-wrapper .task {
+    max-width: 15em;
+  }
+}
+@media (min-width: 992px) {
+  .hero {
+    flex-direction: row;
+    margin-right: 0;
+    margin-left: 8rem;
+    width: calc(100% - 8rem);
+  }
+  .hero-img img {
+    height: auto;
+    z-index: -1;
+    position: relative;
+  }
+  .benefits-section {
+    gap: 8em;
+  }
+  .benefit-wrapper {
+    flex-direction: row;
+    gap: 1.5em;
+  }
+  .benefit-widget {
+    justify-content: flex-end;
+  }
+  .benefit-wrapper:nth-of-type(even) {
+    flex-direction: row-reverse;
+  }
+  .benefit-wrapper:nth-of-type(even) .benefit-widget {
+    justify-content: flex-start;
+  }
+  .cta-section {
+    flex-direction: row;
+  }
+  .cta-section .cta-img-wrapper {
+    margin-top: 0;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

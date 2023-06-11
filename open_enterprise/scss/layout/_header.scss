@@ -1,0 +1,92 @@
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+.desktop-navbar {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+
+    nav {
+        @include mixins.desktop-nav;
+    }
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 250px;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+
+.menu {
+    cursor: pointer;
+
+    .line {
+        height: .2rem;
+        width: 2.5rem;
+        background-color: variables.$black;
+    }
+
+    .line-1, .line-2 {
+        margin-bottom: .6rem;
+    }
+} 
+
+.dropdown-nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease-out;
+    margin-top: 1em;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 1em;
+    }
+
+    a:hover,
+    li:last-of-type a {
+        color: variables.$brand-color;
+    }
+
+    &.open {
+        max-height: 15em;
+    }
+}
+
+@media (min-width: variables.$large-breakpoint) {
+    .desktop-navbar {
+        display: flex;
+
+        nav {
+            @include mixins.desktop-nav(1.6rem, 1rem);
+        }
+    }
+
+    .mobile-navbar {
+        display: none;
+    }
+}
+
+@media (min-width: variables.$extra-large-breakpoint) {
+    .desktop-navbar {
+        nav {
+            @include mixins.desktop-nav;
+        }
+    }
+}

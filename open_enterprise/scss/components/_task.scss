@@ -1,0 +1,33 @@
+@use '../utilities/variables';
+
+.task {
+    background-color: #fff;
+    padding: 8px 16px 16px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, .1);
+    border-radius: 16px;
+
+    & .task-heading {
+        font-weight: 600;
+    }
+
+    & .task-bottom {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    & .task-bounty,
+    & .task-deadline {
+        display: inline-flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    & .task-bounty {
+        background-color: variables.$brand-color;
+        color: variables.$white;
+        padding: .2em .4em;
+        border-radius: 40px;
+        margin: .4em 0;
+    }
+}

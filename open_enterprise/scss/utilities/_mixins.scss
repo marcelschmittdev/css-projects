@@ -1,0 +1,58 @@
+@use './variables';
+
+@mixin button ($bg-color: variables.$brand-color) {
+    background-color: $bg-color;
+    color: variables.$white;
+    border: 0;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    
+    &:focus {
+        outline: none;
+    }
+    
+    &:active {
+        transform: scale(.98);
+    }
+}
+
+@mixin list-reset {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin vertical-nav($font-size: 1em, $gap: 1em) {
+    ul {
+        @include list-reset;
+    }
+
+    ul li {
+        display: block;
+        margin: $gap 0;
+    }
+
+}
+
+@mixin desktop-nav($font-size: 2rem, $gap: 1.6rem) {
+    ul {
+        @include list-reset;
+    }  
+
+    ul li {
+        display: inline-block;
+        margin: 0 $gap;
+
+        &:last-of-type a,
+        &:hover a {
+            color: variables.$brand-color;
+        }
+
+        a {
+            font-size: $font-size;
+            transition: color .3s;
+        }
+    }
+}

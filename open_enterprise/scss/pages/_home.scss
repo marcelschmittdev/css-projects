@@ -1,0 +1,262 @@
+@use '../utilities/variables';
+@use '../utilities/mixins';
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8em;
+}
+
+// ****** Hero Section ******
+
+.hero {
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    h1 {
+        margin: 0;
+    }
+}
+
+.hero-img {
+    max-width: 40em;
+
+    img {
+        max-width: 100%;
+    }
+}
+
+// ****** Reimagine Work Section ******
+.reimagine-work-section {
+    text-align: center;
+
+    & p, & h2 {
+        max-width: 1000px;
+        margin: 1em auto;
+    }
+}
+
+.reimagine-work-section .cards-wrapper {
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+
+.cards-wrapper .card {
+    max-width: 100%;
+}
+
+// ****** Benefits Section ******
+.benefits-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4em;
+}
+
+.benefit-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & .benefit-widget {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        & img {
+            max-width: 100%;
+        }
+    }
+
+    & .benefit-copy {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    & .benefit-copy-heading {
+        margin: 0.5em 0;
+    }
+
+    & .benefit-copy-text {
+        margin-top: .5em;
+        margin-bottom: 1.5em;
+    }
+}
+
+.benefit-wrapper:first-of-type .benefit-widget img {
+    border-radius: 16px;
+    box-shadow: 20px 20px variables.$brand-color;
+}
+
+// ****** Career Section ******
+.career-section {
+    > h2, > p {
+        text-align: center;
+    }
+
+    .btn-wrapper {
+        margin-top: 32px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .tasks-wrapper {
+        margin-top: 2.3em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.7em;
+    }
+
+    .task {
+        max-width: 100%;
+    }
+}
+
+// ****** Divider ******
+.divider {
+    width: 150vw;
+    height: auto;
+}
+
+// ****** CTA section ******
+.cta-section {
+    display: flex;
+    flex-direction: column;
+
+    .cta-text-wrapper, .cta-img-wrapper {
+        flex: 1;
+    }
+
+    .cta-text-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .cta-text-wrapper .cta-link {
+        display: inline-block;
+        margin-top: 16px;
+    }
+
+    .cta-img-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2em;
+
+        & img {
+            max-width: 100%;
+        }
+    }
+
+}
+
+.creators {
+    margin-top: 4em;
+
+    & a {
+        color: variables.$brand-color;
+    }
+}
+
+@media (min-width: variables.$medium-breakpoint) {
+    .reimagine-work-section .cards-wrapper {
+        flex-direction: row;
+        align-items: stretch;
+        flex-wrap: wrap;
+
+        & .card {
+            max-width: 14em;
+        }
+    }
+
+    .benefits-section {
+        gap: 6em;
+    }
+
+    .career-section .tasks-wrapper {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+
+        & .task {
+            max-width: 15em;
+        }
+    }
+}
+
+@media (min-width: variables.$large-breakpoint) {
+    .hero {
+        flex-direction: row;
+        $margin-left: 8rem;
+        margin-right: 0;
+        margin-left: $margin-left;
+        width: calc(100% - $margin-left);
+    }
+
+    .hero-img {
+        img {
+            height: auto;
+            z-index: -1;
+            position: relative;
+        }
+    }
+
+    .benefits-section {
+        gap: 8em;
+    }
+
+    .benefit-wrapper {
+        flex-direction: row;
+        gap: 1.5em;
+    }
+
+    .benefit-widget {
+        justify-content: flex-end;
+    }
+
+    .benefit-wrapper:nth-of-type(even) {
+        flex-direction: row-reverse;
+
+        & .benefit-widget {
+            justify-content: flex-start;
+        }
+    }
+
+    .cta-section {
+        flex-direction: row;
+
+        .cta-img-wrapper {
+            margin-top: 0;
+        }
+    }
+}
+
+
+
+
+
+
